@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { MultiSearch } from '../interfaces/multi.interface';
+import { map, Observable } from 'rxjs';
+import { Result, MultiSearch } from '../interfaces/multi.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,16 @@ export class MoviesService {
 
   constructor( private http: HttpClient ) { }
 
-  BuscarMulti( termino: string ): Observable<MultiSearch[]> {
+  BuscarMulti( termino: string ): Observable<Result[]> {
     
     const url = `${ this.apiUrl }/search/multi/?query=${ termino }&api_key=457643c75832b5d6f6c66e10f260618b`;
 
-    return this.http.get<MultiSearch[]>( url );
+    return this.http.get<MultiSearch>( url )
+          .pipe(
+            map((resp: MultiSearch)=>{
+              return resp.results
+            })
+          );
 
   }
 
