@@ -1,7 +1,7 @@
 <section>
     <div class="container">
-        <div class="row d-flex justify-content-between">
-            <div class="col-3 mb-4">
+        <div class="row d-flex justify-content-between border-bottom">
+            <div class="col-3 col-xs-12 col-md-3 col-lg-3 mb-4">
                 <form autocomplete="off" (ngSubmit)="buscar()">
                     <div class="input-group rounded">
                         <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
@@ -12,7 +12,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-3 col-xs-12 col-md-3 col-lg-3 text-right mb-4">
+            <div class="col-3 col-xs-12 col-md-2 col-lg-1 text-right mb-4 offset">
                 <p class="m-0">Home /</p>
             </div>
             <div class="col-12" *ngIf="hayError">
@@ -25,28 +25,6 @@
                 </div>
             </div>
         </div>
-        <div class="row" *ngIf="!hayError">
-            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 my-2" *ngFor="let multi of multis">
-                <div class="card border shadow-5 text-dark bg-white">
-                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                        <img src="https://image.tmdb.org/t/p/original{{multi.poster_path}}" class="img-fluid" />
-                        <a href="/movie/id">
-                            <div class="mask" style="background-color: rgba(251, 25s1, 251, 0.15)"></div>
-                        </a>
-                    </div>
-                    <div class="card-header d-flex justify-content-between text-nowrap">
-                        <h6 class="card-title">{{ multi.name }}{{ multi.title }}</h6>
-                        <small class="tagsmall">{{ multi.media_type }}</small>
-                    </div>
-                    <div class="card-body py-2">
-                        <p class="m-0"> Release Date: {{ multi.first_air_date }}{{ multi.release_date}} </p>
-                    </div>
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-primary btn-sm" href="/movie/id">View</button>
-                        <small> #{{ multi.id }}</small>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <app-multi-tabla [multis]="multis"></app-multi-tabla>
     </div>
 </section>

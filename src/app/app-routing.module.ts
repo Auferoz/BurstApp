@@ -31,7 +31,7 @@ const routes: Routes = [
     component: SerieList2022Component
   },
   {
-    path: 'movie-sdetails/:id',
+    path: 'movie-details/:id',
     component: MovieDetailsComponent
   },
   {
