@@ -3,3 +3,13 @@
     font-weight: 100;
     font-size: 16px;
 }
+
+.dropdown-item.active, .dropdown-item:active, .dropdown-item:focus {
+    color: #16181b;
+    background-color: #2082d1;
+}
+
+.dropdown-item:hover {
+    color: #eee;
+    background-color: #232323;
+}

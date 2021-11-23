@@ -23,15 +23,15 @@ const routes: Routes = [
     component: MovieList2022Component
   },
   {
-    path: 'serie-list2021',
+    path: 'serielist2021',
     component: SerieList2021Component
   },
   {
-    path: 'serie-list2022',
+    path: 'serielist2022',
     component: SerieList2022Component
   },
   {
-    path: 'movie-details/:id',
+    path: 'movie-sdetails/:id',
     component: MovieDetailsComponent
   },
   {

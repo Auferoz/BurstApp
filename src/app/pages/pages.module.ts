@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { SerieDetailsComponent } from './serie-details/serie-details.component';
@@ -30,7 +31,8 @@ import { MovieList2022Component } from './movie-list2022/movie-list2022.componen
     MovieList2022Component
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class PagesModule { }
