@@ -19,12 +19,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buscar(){
+  buscar( termino: string ){
     
     this.hayError = false;
-    console.log(this.termino);
+    this.termino = termino;
 
-    this.moviesService.BuscarMulti( this.termino )
+    this.moviesService.BuscarMulti( termino )
     .subscribe((values: Result[]) => {
       this.multis = values;
       console.log(values);
@@ -32,6 +32,10 @@ export class HomeComponent implements OnInit {
       this.hayError   = true;
       this.multis     = [];
     });
+  }
+
+  sugerencias( termino: string ){
+    this.hayError = false;
   }
 
 }

@@ -10,6 +10,7 @@ import { SerieList2022Component } from './serie-list2022/serie-list2022.componen
 import { MovieList2021Component } from './movie-list2021/movie-list2021.component';
 import { MovieList2022Component } from './movie-list2022/movie-list2022.component';
 import { MultiTablaComponent } from './components/multi-tabla/multi-tabla.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 
 
@@ -22,7 +23,8 @@ import { MultiTablaComponent } from './components/multi-tabla/multi-tabla.compon
     SerieList2022Component,
     MovieList2021Component,
     MovieList2022Component,
-    MultiTablaComponent
+    MultiTablaComponent,
+    SearchInputComponent
   ],
   exports:[
     HomeComponent,

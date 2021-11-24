@@ -4,10 +4,10 @@
             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <img src="https://image.tmdb.org/t/p/original{{multi.poster_path}}" class="img-fluid" />
                 <a [routerLink]="['/movie-details', multi.id]">
-                    <div class="mask" style="background-color: rgba(251, 25s1, 251, 0.15)"></div>
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
                 </a>
             </div>
-            <div class="card-header d-flex justify-content-between text-nowrap">
+            <div class="card-header d-flex align-items-center justify-content-between text-nowrap">
                 <h6 class="card-title">{{ multi.name }}{{ multi.title }}</h6>
                 <small class="tagsmall">{{ multi.media_type }}</small>
             </div>
@@ -19,7 +19,7 @@
             <div class="card-footer">
                 <button type="button" class="btn btn-primary btn-sm"
                     [routerLink]="['/movie-details', multi.id]">View</button>
-                <small> #{{ multi.id }}</small>
+                <small> id#{{ multi.id }}</small>
             </div>
         </div>
     </div>

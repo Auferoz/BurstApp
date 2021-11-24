@@ -1,0 +1,13 @@
+.tagsmall {
+    border: 1px solid #232323 !important;
+    padding: 0.07rem .5rem !important;
+}
+
+.card-title {
+    max-width: 250px !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
