@@ -11,7 +11,7 @@
                 <div class="card border shadow-5 text-dark bg-white">
                     <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                         <img src="https://image.tmdb.org/t/p/original{{movies.poster_path}}" class="img-fluid" />
-                        <a [routerLink]="['/movie-details', movies.id]">
+                        <a [routerLink]="['/details', movies.media_type, movies.id]">
                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
                         </a>
                     </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="card-footer">
                         <button type="button" class="btn btn-primary btn-sm"
-                            [routerLink]="['/movie-details', movies.id]">View</button>
+                            [routerLink]="['/details', movies.media_type, movies.id]">View</button>
                         <small class="mx-2"><i class="far fa-id-badge"></i>#{{ movies.id }}</small>
                     </div>
                 </div>

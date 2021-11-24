@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../shared/services/multis.service';
+import { MultisService } from '../../shared/services/multis.service';
 import { MultiSearch, Result } from '../../shared/interfaces/multi.interface';
 
 @Component({
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   hayError  : boolean = false;
   multise    : Result[] = [];
 
-  constructor( private moviesService: MoviesService ) { }
+  constructor( private multisService: MultisService ) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.hayError = false;
     this.termino = termino;
 
-    this.moviesService.BuscarMulti( termino )
+    this.multisService.BuscarMulti( termino )
     .subscribe((values: Result[]) => {
       this.multise = values;
       console.log(values);

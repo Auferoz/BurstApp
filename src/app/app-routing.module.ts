@@ -5,8 +5,7 @@ import { MovieList2021Component } from './pages/movie-list2021/movie-list2021.co
 import { SerieList2021Component } from './pages/serie-list2021/serie-list2021.component';
 import { MovieList2022Component } from './pages/movie-list2022/movie-list2022.component';
 import { SerieList2022Component } from './pages/serie-list2022/serie-list2022.component';
-import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
-import { SerieDetailsComponent } from './pages/serie-details/serie-details.component';
+import { MultiDetailsComponent } from './pages/multi-details/multi-details.component';
 
 const routes: Routes = [
   {
@@ -31,12 +30,8 @@ const routes: Routes = [
     component: SerieList2022Component
   },
   {
-    path: 'movie-details/:id',
-    component: MovieDetailsComponent
-  },
-  {
-    path: 'serie-details/:id',
-    component: SerieDetailsComponent
+    path: 'details/:type/:id',
+    component: MultiDetailsComponent
   },
   {
     path: '**',

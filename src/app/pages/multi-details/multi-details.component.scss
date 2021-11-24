@@ -1,0 +1,31 @@
+.img-backdrop {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: .3;
+    object-fit: cover;
+}
+
+.border-rounded {
+  border-radius: 20px;
+}
+
+.bg-white-transparent {
+  background-color: rgb(241 241 241 / 70%);
+  border-radius: 20px;
+}
+
+.fw-light {
+  font-weight: 300!important;
+}
+
+.fw-normal {
+  font-weight: 400!important;
+}
+
+.img-fuid {
+  width: 100%;
+}

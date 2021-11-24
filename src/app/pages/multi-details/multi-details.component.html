@@ -1,0 +1,42 @@
+<div *ngIf="!details; else divDetails" class="alert alert-info">
+    Loading...
+</div>
+
+
+<ng-template #divDetails>
+    <section>
+        <img src="https://image.tmdb.org/t/p/original{{details.backdrop_path}}" class="img-fluid img-backdrop">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 d-none d-sm-block">
+                <div class="card my-3 border-rounded">
+                    <img class="border-rounded" src="https://image.tmdb.org/t/p/w500{{details.poster_path}}"
+                        [alt]="details.title">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+                <div class="card my-3 p-3">
+                    <div class="border border-rounded">
+                        <h1 class="card-title text-dark p-3">{{ details.name }}{{ details.title}}
+                            <small class="h6 fw-light">
+                                [{{ details.release_date | date: 'yyyy'}}{{details.first_air_date | date: 'yyyy'}}]
+                            </small>
+                        </h1>
+                        <p class="h6 fw-normal px-3 pt-1 mb-1">
+                            <b>Genres:</b> {{details.genres | json}}
+                        </p>
+                        <p class="h6 fw-normal px-3 pt-1 mb-1">
+                            <b>Overview:</b> {{details.overview}}
+                        </p>
+                        <p class="h6 fw-normal px-3 pt-1 pb-3 mb-1">
+                            <b>Runtime:</b> {{details.runtime}} Minutes
+                        </p>
+                        <div class="badge bg-primary m-3">
+                            test
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</ng-template>

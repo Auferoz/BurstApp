@@ -15,7 +15,7 @@ export interface Result {
     original_title?:   string;
     overview:          string;
     popularity:        number;
-    poster_path:       null | string;
+    poster_path?:       null | string;
     release_date?:     string;
     title?:            string;
     video?:            boolean;

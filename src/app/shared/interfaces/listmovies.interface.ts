@@ -10,7 +10,7 @@ export interface ListMovies {
     name:           string;
     object_ids:     { [key: string]: null | string };
     page:           number;
-    poster_path:    null;
+    poster_path?:    null;
     public:         boolean;
     results:        ResultMovie[];
     revenue:        number;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../../shared/services/multis.service';
+import { MultisService } from '../../shared/services/multis.service';
 import { Result } from '../../shared/interfaces/multi.interface';
 import { ListMovies, ResultMovie } from '../../shared/interfaces/listmovies.interface';
 
@@ -14,14 +14,13 @@ export class MovieList2021Component implements OnInit {
   hayError        : boolean = false;
   listmovies21    : ResultMovie[] = [];
 
-  constructor( private moviesService: MoviesService ) { }
+  constructor( private multisService: MultisService ) { }
 
   ngOnInit(): void {
 
-    this.moviesService.listMovies2021()
+    this.multisService.listMovies2021()
     .subscribe((values: ResultMovie[]) => {
       this.listmovies21 = values;
-      console.log('este', values);
     }, (err) => {
       this.hayError     = true;
       this.listmovies21 = [];
