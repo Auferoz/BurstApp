@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   termino   : string = '';
   hayError  : boolean = false;
-  multis    : Result[] = [];
+  multise    : Result[] = [];
 
   constructor( private moviesService: MoviesService ) { }
 
@@ -26,11 +26,11 @@ export class HomeComponent implements OnInit {
 
     this.moviesService.BuscarMulti( termino )
     .subscribe((values: Result[]) => {
-      this.multis = values;
+      this.multise = values;
       console.log(values);
     }, (err) => {
       this.hayError   = true;
-      this.multis     = [];
+      this.multise     = [];
     });
   }
 

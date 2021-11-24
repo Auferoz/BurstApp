@@ -13,6 +13,7 @@ export class MoviesService {
   
   // API COMPLETA https://api.themoviedb.org/3/search/multi?api_key=457643c75832b5d6f6c66e10f260618b&language=en-US&query=bull&page=1'
   // API LIST https://api.themoviedb.org/4/list/{list_id}?page=1&api_key=457643c75832b5d6f6c66e10f260618b
+  // API GENRE https://api.themoviedb.org/3/genre/movie/list?api_key=457643c75832b5d6f6c66e10f260618b&language=en-US
 
   constructor( private http: HttpClient ) { }
 
@@ -26,9 +27,8 @@ export class MoviesService {
           );
   }
 
-  ListMovies2021( list = '7114017' ): Observable<ResultMovie[]> {
-    const url = `${ this.apiUrl }/4/list/${list}/?api_key=457643c75832b5d6f6c66e10f260618b&page=1`;
-    console.log(url);
+  listMovies2021( list = '7114017' ): Observable<ResultMovie[]> {
+    const url = `${ this.apiUrl }/4/list/${list}?api_key=457643c75832b5d6f6c66e10f260618b`;
     return this.http.get<ListMovies>( url )
     .pipe(
       map((resp: ListMovies)=>{

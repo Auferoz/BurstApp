@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../shared/services/multis.service';
 import { Result } from '../../shared/interfaces/multi.interface';
-import { ListMovies } from '../../shared/interfaces/listmovies.interface';
+import { ListMovies, ResultMovie } from '../../shared/interfaces/listmovies.interface';
 
 @Component({
   selector: 'app-movie-list2021',
@@ -10,25 +10,21 @@ import { ListMovies } from '../../shared/interfaces/listmovies.interface';
 })
 export class MovieList2021Component implements OnInit {
 
-  termino   : string = '';
-  hayError  : boolean = false;
-  multis    : ListMovies[] = [];
-  moviesService: any;
+  termino         : string = '';
+  hayError        : boolean = false;
+  listmovies21    : ResultMovie[] = [];
 
-  constructor( private MoviesService: MoviesService ) { }
+  constructor( private moviesService: MoviesService ) { }
 
   ngOnInit(): void {
-  }
 
-  buscar( termino: string ){
-    
-    this.hayError = false;
-    this.termino = termino;
-
-    this.moviesService.listMovies2021( termino )
-    .subscribe((values: ListMovies[]) => {
-      this.multis = values;
-      console.log(values);
+    this.moviesService.listMovies2021()
+    .subscribe((values: ResultMovie[]) => {
+      this.listmovies21 = values;
+      console.log('este', values);
+    }, (err) => {
+      this.hayError     = true;
+      this.listmovies21 = [];
     });
   }
 
