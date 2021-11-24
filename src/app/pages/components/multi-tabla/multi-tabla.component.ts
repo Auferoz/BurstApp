@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Result } from '../../../shared/interfaces/multi.interface';
+import { ListMovies } from '../../../shared/interfaces/listmovies.interface';
 
 @Component({
   selector: 'app-multi-tabla',
@@ -8,7 +9,8 @@ import { Result } from '../../../shared/interfaces/multi.interface';
 })
 export class MultiTablaComponent implements OnInit {
 
-  @Input() multis: Result[] = [];
+  @Input() multis    : Result[] = [];
+  @Input() listMovies: ListMovies[] = [];
 
   constructor() { }
 
