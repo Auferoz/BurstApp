@@ -4,6 +4,7 @@ import { map, Observable } from 'rxjs';
 import { Result, MultiSearch } from '../interfaces/multi.interface';
 import { ResultMovie, ListMovies } from '../interfaces/listmovies.interface';
 import { MultiDetails } from '../interfaces/details.interface';
+import { ListSeries, ResultSerie } from '../interfaces/listseries.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { MultiDetails } from '../interfaces/details.interface';
 export class MultisService {
 
   private apiUrl: string = 'https://api.themoviedb.org';
+  private api_key: string = '457643c75832b5d6f6c66e10f260618b';
   
   // API COMPLETA https://api.themoviedb.org/3/search/multi?api_key=457643c75832b5d6f6c66e10f260618b&language=en-US&query=bull&page=1'
   // API LIST https://api.themoviedb.org/4/list/{list_id}?page=1&api_key=457643c75832b5d6f6c66e10f260618b
@@ -20,7 +22,7 @@ export class MultisService {
   constructor( private http: HttpClient ) { }
 
   BuscarMulti( termino: string ): Observable<Result[]> {
-    const url = `${ this.apiUrl }/3/search/multi/?query=${ termino }&api_key=457643c75832b5d6f6c66e10f260618b`;
+    const url = `${ this.apiUrl }/3/search/multi/?query=${ termino }&api_key=${ this.api_key }`;
     return this.http.get<MultiSearch>( url )
           .pipe(
             map((resp: MultiSearch)=>{
@@ -30,7 +32,7 @@ export class MultisService {
   }
 
   listMovies2021( list = '7114017' ): Observable<ResultMovie[]> {
-    const url = `${ this.apiUrl }/4/list/${list}?api_key=457643c75832b5d6f6c66e10f260618b`;
+    const url = `${ this.apiUrl }/4/list/${list}?api_key=${ this.api_key }`;
     return this.http.get<ListMovies>( url )
           .pipe(
             map((resp: ListMovies)=>{
@@ -39,8 +41,18 @@ export class MultisService {
           );
   }
 
+  listSeries2021( list = '7113210' ): Observable<ResultSerie[]> {
+    const url = `${ this.apiUrl }/4/list/${list}?api_key=${ this.api_key }`;
+    return this.http.get<ListSeries>( url )
+          .pipe(
+            map((resp: ListSeries)=>{
+              return resp.results
+            })
+          );
+  }
+
   multiDetails( id: string, type: string ): Observable<MultiDetails> {
-    const url = `${ this.apiUrl }/3/${type}/${id}?api_key=457643c75832b5d6f6c66e10f260618b`;
+    const url = `${ this.apiUrl }/3/${type}/${id}?api_key=${ this.api_key }`;
     return this.http.get<MultiDetails>( url );
   }
 

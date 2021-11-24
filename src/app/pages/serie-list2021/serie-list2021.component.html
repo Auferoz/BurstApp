@@ -1,1 +1,40 @@
-<p>serie-list2021 works!</p>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-between">
+                <h3>Movie#List 2021</h3>
+                <h3>Totals# -- </h3>
+            </div>
+        </div>
+        <div class="row" *ngIf="listseries21.length > 0">
+            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3 my-2" *ngFor="let movies of listseries21">
+                <div class="card border shadow-5 text-dark bg-white">
+                    <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                        <img src="https://image.tmdb.org/t/p/original{{movies.poster_path}}" class="img-fluid" />
+                        <a [routerLink]="['/details', movies.media_type, movies.id]">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                        </a>
+                    </div>
+                    <div class="card-header d-flex align-items-center justify-content-between text-nowrap">
+                        <h6 class="card-title m-0"><i class="fas fa-film"></i> {{ movies.name }}</h6>
+                    </div>
+                    <div class="card-body py-1 text-nowrap">
+                        <p class="m-0"><i class="far fa-calendar"></i><b> Release Date: </b>{{ movies.first_air_date }}
+                        </p>
+                    </div>
+                    <div class="card-body py-1 text-nowrap">
+                        <p class="m-0"><i class="fas fa-users"></i><b> Popularity: </b>{{ movies.popularity }}</p>
+                    </div>
+                    <div class="card-body py-1 text-nowrap">
+                        <p class="m-0"><i class="fas fa-poll"></i><b> Vote Average: </b>{{ movies.vote_average }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-primary btn-sm"
+                            [routerLink]="['/details', movies.media_type, movies.id]">View</button>
+                        <small class="mx-2"><i class="far fa-id-badge"></i>#{{ movies.id }}</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
