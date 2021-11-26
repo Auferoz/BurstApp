@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-between">
-                <h3>Movie#List 2021</h3>
-                <h3>Totals# -- </h3>
+                <h3>List# Movies 2021</h3>
+                <h3>Totals# 28 </h3>
             </div>
         </div>
         <div class="row" *ngIf="listmovies21.length > 0">
@@ -28,10 +28,10 @@
                     <div class="card-body py-1 text-nowrap">
                         <p class="m-0"><i class="fas fa-poll"></i><b> Vote Average: </b>{{ movies.vote_average }}</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer d-flex align-items-center">
                         <button type="button" class="btn btn-primary btn-sm"
                             [routerLink]="['/details', movies.media_type, movies.id]">View</button>
-                        <small class="mx-2"><i class="far fa-id-badge"></i>#{{ movies.id }}</small>
+                        <small class="mx-2"><i class="far fa-id-badge"></i> # {{ movies.id }}</small>
                     </div>
                 </div>
             </div>

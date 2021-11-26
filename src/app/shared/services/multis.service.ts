@@ -11,8 +11,10 @@ import { ListSeries, ResultSerie } from '../interfaces/listseries.interface';
 })
 export class MultisService {
 
-  private apiUrl: string = 'https://api.themoviedb.org';
-  private api_key: string = '457643c75832b5d6f6c66e10f260618b';
+  private apiUrl    : string = 'https://api.themoviedb.org';
+  private api_key   : string = '457643c75832b5d6f6c66e10f260618b';
+  private movies2021: string = '7114017';
+  private series2021: string = '7113210';
   
   // API COMPLETA https://api.themoviedb.org/3/search/multi?api_key=457643c75832b5d6f6c66e10f260618b&language=en-US&query=bull&page=1'
   // API LIST https://api.themoviedb.org/4/list/{list_id}?page=1&api_key=457643c75832b5d6f6c66e10f260618b
@@ -21,7 +23,7 @@ export class MultisService {
 
   constructor( private http: HttpClient ) { }
 
-  BuscarMulti( termino: string ): Observable<Result[]> {
+  buscarMulti( termino: string ): Observable<Result[]> {
     const url = `${ this.apiUrl }/3/search/multi/?query=${ termino }&api_key=${ this.api_key }`;
     return this.http.get<MultiSearch>( url )
           .pipe(
@@ -31,7 +33,7 @@ export class MultisService {
           );
   }
 
-  listMovies2021( list = '7114017' ): Observable<ResultMovie[]> {
+  listMovies2021( list = this.movies2021 ): Observable<ResultMovie[]> {
     const url = `${ this.apiUrl }/4/list/${list}?api_key=${ this.api_key }`;
     return this.http.get<ListMovies>( url )
           .pipe(
@@ -41,7 +43,7 @@ export class MultisService {
           );
   }
 
-  listSeries2021( list = '7113210' ): Observable<ResultSerie[]> {
+  listSeries2021( list = this.series2021 ): Observable<ResultSerie[]> {
     const url = `${ this.apiUrl }/4/list/${list}?api_key=${ this.api_key }`;
     return this.http.get<ListSeries>( url )
           .pipe(

@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.hayError = false;
     this.termino = termino;
 
-    this.multisService.BuscarMulti( termino )
+    this.multisService.buscarMulti( termino )
     .subscribe((values: Result[]) => {
       this.multise = values;
       console.log(values);

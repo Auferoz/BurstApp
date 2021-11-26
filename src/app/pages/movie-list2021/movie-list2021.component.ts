@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MultisService } from '../../shared/services/multis.service';
-import { Result } from '../../shared/interfaces/multi.interface';
 import { ListMovies, ResultMovie } from '../../shared/interfaces/listmovies.interface';
 
 @Component({
