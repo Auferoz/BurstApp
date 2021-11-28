@@ -1,0 +1,17 @@
+.img-fluid {
+    width: 304px !important;
+    height: 456px !important;
+}
+
+.card-title {
+    max-width: 215px !important;
+    margin: 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.flag {
+    text-transform: lowercase;
+}

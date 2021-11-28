@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 d-flex justify-content-between">
                 <h3>Movie#List 2021</h3>
-                <h3>Totals# -- </h3>
+                <h3>Totals# 24 </h3>
             </div>
         </div>
         <div class="row" *ngIf="listseries21.length > 0">
@@ -17,9 +17,10 @@
                     </div>
                     <div class="card-header d-flex align-items-center justify-content-between text-nowrap">
                         <h6 class="card-title m-0"><i class="fas fa-film"></i> {{ movies.name }}</h6>
+                        <small><i class="flag flag-{{ movies.origin_country }}"></i>{{ movies.origin_country }}</small>
                     </div>
                     <div class="card-body py-1 text-nowrap">
-                        <p class="m-0"><i class="far fa-calendar"></i><b> Release Date: </b>{{ movies.first_air_date }}
+                        <p class="m-0"><i class="far fa-calendar"></i><b> Release Date: </b>{{ movies.first_air_date | date}}
                         </p>
                     </div>
                     <div class="card-body py-1 text-nowrap">

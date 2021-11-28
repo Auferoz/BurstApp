@@ -28,7 +28,13 @@
                             <b>Overview:</b> {{details.overview}}
                         </p>
                         <p class="h6 fw-normal px-3 pt-1 pb-3 mb-1">
-                            <b>Runtime:</b> {{details.runtime}} Minutes
+                            <b>Runtime:</b> {{details.episode_run_time[0]}} Minutes <br>
+                            <b>Total Runtime:</b> {{details.episode_run_time[0] * details.number_of_episodes}} Minutes
+                        </p>
+                        <p class="h6 fw-normal px-3 pt-1 pb-3 mb-1">
+                            <b>Seasons:</b> {{details.last_episode_to_air.season_number}} <br>
+                            <b>Episodes:</b> {{details.number_of_episodes}} <br>
+                            <b>Date Last:</b> {{details.last_episode_to_air.air_date}}<br>
                         </p>
                         <div class="badge bg-primary m-3">
                             test
