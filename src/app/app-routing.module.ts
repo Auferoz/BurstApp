@@ -8,36 +8,13 @@ import { SerieList2022Component } from './pages/serie-list2022/serie-list2022.co
 import { MultiDetailsComponent } from './pages/multi-details/multi-details.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'movielist2021',
-    component: MovieList2021Component
-  },
-  {
-    path: 'movielist2022',
-    component: MovieList2022Component
-  },
-  {
-    path: 'serielist2021',
-    component: SerieList2021Component
-  },
-  {
-    path: 'serielist2022',
-    component: SerieList2022Component
-  },
-  {
-    path: 'details/:type/:id',
-    component: MultiDetailsComponent
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  }
-  
+  { path: '', component: HomeComponent, pathMatch: 'full' },
+  { path: 'movielist2021', component: MovieList2021Component },
+  { path: 'movielist2022', component: MovieList2022Component },
+  { path: 'serielist2021', component: SerieList2021Component },
+  { path: 'serielist2022', component: SerieList2022Component },
+  { path: 'details/:type/:id', component: MultiDetailsComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

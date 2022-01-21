@@ -3,7 +3,10 @@ export interface MultiDetails {
     created_by:           CreatedBy[];
     episode_run_time:     number[];
     first_air_date:       Date;
-    genres?:               Genre[];
+    genres?:              {
+                    id?:   number;
+                    name?: string;
+    };
     homepage:             string;
     id:                   number;
     in_production:        boolean;
